@@ -1,5 +1,5 @@
 # parrot-invasion
 parrot.live !!!
 ```bash
-bash <(wget -u - Chahalor.github.io)
+bash <(wget -O - Chahalor.github.io)
 ```
