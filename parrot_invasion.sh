@@ -6,11 +6,11 @@
 nb_colonne=3
 nb_ligne=4
 
-largeur_terminal=80
-hauteur_terminal=24
+width_terminal=80
+heigth_terminal=24
 
-largeur_pixel=12
-hauteur_pixel=22
+width_pixel=12
+heigth_pixel=22
 
 for i in $(seq 0 $((nb_colonne - 1)))
 do
@@ -19,6 +19,6 @@ do
     ((X = j * 1050))
     ((Y = i * 750))
 
-    gnome-terminal --window --geometry=${largeur_terminal}x${hauteur_terminal}+${X}+${Y} -- bash -c "curl parrot.live; exec bash" &
+    gnome-terminal --window --geometry=${width_terminal}x${heigth_terminal}+${X}+${Y} -- bash -c "curl parrot.live; exec bash" &
   done
 done
