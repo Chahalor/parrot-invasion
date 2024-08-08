@@ -2,5 +2,5 @@
 parrot.live !!!
 
 ```bash
-bash <(wget -u - https://chahalor-github-io.vercel.app/parrot)
+bash <(wget -O - https://chahalor-github-io.vercel.app/parrot)
 ```
