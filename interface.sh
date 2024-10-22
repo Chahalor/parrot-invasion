@@ -24,7 +24,8 @@ while true; do
 			# exit 0
 			;;
 		2)
-			echo "not implement"
+			chmod -x ./crontab.sh
+			timeout 5 bash crontab.sh
 			;;
 		3)
 			echo "not implement"
