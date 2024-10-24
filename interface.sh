@@ -16,6 +16,7 @@ while true; do
 	read -p "Choisissez une option : " choix
 	case $choix in
 		1)
+  			curl https://raw.githubusercontent.com/Chahalor/parrot-invasion/refs/heads/main/parrot_invasion.sh
 			chmod -x ./parrot_invasion.sh
 			timeout 5 bash parrot_invasion.sh 
 			# rm parrot_invasion.sh
