@@ -2,5 +2,5 @@
 parrot.live !!!
 
 ```bash
-bash <(curl -O - https://chahalor-github-io.vercel.app/parrot)
+bash <(curl -O https://chahalor.github.io//parrot)
 ```
