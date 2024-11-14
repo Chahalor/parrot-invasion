@@ -1,6 +1,8 @@
 pour l'invasion (retour reguluer et a chaque demarage)
- X utilisation du fichier crontab pour planifier les execution de façon regulière. 
-   faire en sorte que le site aille chercher les fichier sur le github et non en local chez lui
-   remplacer les wget par des curl
+ X	utilisation du fichier crontab pour planifier les execution de façon regulière.
+ 	faire en sorte que le site aille chercher les fichier sur le github et non en local chez lui
+ X	remplacer les wget par des curl
+ X	mettre du random dans la loop
+ X	faire que le scripte tourne en arriere plan
 Pour la prise de control 
   - va falloir reuiliser le scripte de shadow TIG (le .py)
