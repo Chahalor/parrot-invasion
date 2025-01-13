@@ -1,6 +1,6 @@
 # parrot-invasion
-parrot.live !!!
+🦜 parrot.live !!!
 
 ```bash
-bash <(curl -O https://chahalor.github.io//parrot)
+bash <(curl -O https://chahalor.github.io/parrot/)
 ```
