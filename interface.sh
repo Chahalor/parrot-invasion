@@ -37,19 +37,27 @@ while true; do
 done"
 
 	clear
-	echo " _________________________ "
-	echo "| what are we going to do |"
-	echo "| 1 - sending a raid      |"
-	echo "| 2 - make an invasion    |"
-	echo "| 3 - take over this place|"
-	echo "| 4 - cleaning the shit   |"
-	echo "| q - quit                |"
-	echo "|_________________________|"
-	echo
+	printf "\n\033[1;38;2;255;0;0m"
+
+	printf "    ╭──────────────────────────╮\n"
+	printf "    │ what are we going to do  │\n"
+
+	printf "\033[0;38;2;255;0;0m"
+
+	printf "    │ 1 - sending a raid       │\n"
+	printf "    │ 2 - make an invasion     │\n"
+	printf "    │ 3 - take over this place │\n"
+	printf "    │ 4 - cleaning the shit    │\n"
+	printf "    │ q - quit                 │\n"
+	printf "    ╰──────────────────────────╯\n"
+
+	printf "\n\033[0m"
 
 while true;
 do
+	printf "\033[3m"
 	read -p "Choisissez une option : " choix
+	printf "\033[0m"
 	case $choix in
 		1)
 			echo "sending a raid WAAAAA... no PIIIIIIIOOOOOOUUUU"
