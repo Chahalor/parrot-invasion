@@ -1,5 +1,6 @@
 {
 	"files.associations": {
-		"valgrind.h": "c"
+		"valgrind.h": "c",
+		"cstdio": "c"
 	}
 }
