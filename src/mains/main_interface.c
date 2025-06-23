@@ -6,9 +6,6 @@ int	_invasion(const char *const restrict name);
 int	_takeover();
 int	_quit(const char *const restrict name);
 
-#ifndef MAIN
-# define MAIN
-
 int	main(int argc, char *argv[])
 {
 	int	action = -1;
@@ -35,5 +32,3 @@ int	main(int argc, char *argv[])
 	}
 	_quit(argv[0]);
 }
-
-#endif // !MAIN

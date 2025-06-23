@@ -26,6 +26,7 @@ $(NAME_INTERFACE): $(_OBJ_RAID) $(_OBJ_INTERFACE)
 $(NAME_INVASION): $(_OBJ_RAID) $(_OBJ_INVASION)
 	mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) -o $(_DIR_BIN)/$@ $^
+	xxd -i $(_DIR_BIN)/$@ invasion.h
 
 $(_DIR_OBJ)/%.o: $(_DIR_SRC)/%.c
 	mkdir -p $(_DIR_OBJ)
