@@ -1,7 +1,0 @@
-{
-	"files.associations": {
-		"valgrind.h": "c",
-		"cstdio": "c",
-		"argz.h": "c"
-	}
-}
