@@ -1,0 +1,5 @@
+*.o
+
+.dev/
+bin/
+.vscode/
