@@ -36,6 +36,7 @@ clean:
 	rm -rf $(_DIR_OBJ)/*.o
 
 fclean: clean
-	rm -rf $(_DIR_BIN)/*
+	rm -rf $(_DIR_BIN)
+	rm -rf $(_DIR_OBJ)
 
 re: fclean all
