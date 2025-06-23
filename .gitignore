@@ -1,5 +1,7 @@
 *.o
 
+invasion.h
+
 .dev/
 bin/
 .vscode/

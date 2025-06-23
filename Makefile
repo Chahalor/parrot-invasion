@@ -17,19 +17,19 @@ _OBJ_INTERFACE	:= $(patsubst $(_DIR_SRC)/%.c,$(_DIR_OBJ)/%.o,$(_SRC_INTERFACE))
 _OBJ_INVASION	:= $(patsubst $(_DIR_SRC)/%.c,$(_DIR_OBJ)/%.o,$(_SRC_INVASION))
 _OBJ_RAID		:= $(_DIR_OBJ)/raid.o
 
-all: $(NAME_INTERFACE) $(NAME_INVASION)
+all: $(NAME_INVASION) $(NAME_INTERFACE)
 
 $(NAME_INTERFACE): $(_OBJ_RAID) $(_OBJ_INTERFACE)
-	mkdir -p $(dir $@)
+	mkdir -p $(_DIR_BIN)
 	$(CC) $(CFLAGS) -o $(_DIR_BIN)/$@ $^
 
 $(NAME_INVASION): $(_OBJ_RAID) $(_OBJ_INVASION)
-	mkdir -p $(dir $@)
+	mkdir -p $(_DIR_BIN)
 	$(CC) $(CFLAGS) -o $(_DIR_BIN)/$@ $^
-	xxd -i $(_DIR_BIN)/$@ invasion.h
+	xxd -i $(_DIR_BIN)/$@ ../invasion.h
 
 $(_DIR_OBJ)/%.o: $(_DIR_SRC)/%.c
-	mkdir -p $(_DIR_OBJ)
+	mkdir -p $(_DIR_OBJ)/mains
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
