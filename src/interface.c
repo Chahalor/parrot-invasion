@@ -83,7 +83,7 @@ int	_takeover()
 	return (0);
 }
 
-__attribute__((noreturn)) int	_quit(
+__attribute__((noreturn, destructor)) int	_quit(
 	const char *const restrict name
 )
 {
